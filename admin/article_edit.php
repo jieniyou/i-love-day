@@ -1,6 +1,8 @@
 <?php
 // 新版后台 - 编辑文章（移动端优先）
-header('Content-Type: text/html; charset=UTF-8');
+if (!headers_sent()) {
+    header('Content-Type: text/html; charset=UTF-8');
+}
 mb_internal_encoding('UTF-8');
 mb_http_output('UTF-8');
 
@@ -83,8 +85,7 @@ $success = '';
 
 $id = intval($_GET['id'] ?? 0);
 if ($id <= 0) {
-    header('Location: articles.php');
-    exit;
+    redirect('articles.php');
 }
 
 // 获取当前文章（情侣双方共享，按 id 即可）
@@ -94,8 +95,7 @@ $article = $db->fetch(
 );
 
 if (!$article) {
-    header('Location: articles.php?success=' . urlencode('未找到该文章'));
-    exit;
+    redirect('articles.php?success=' . urlencode('未找到该文章'));
 }
 
 // 确保文章权限表存在（用于控制另一半是否可编辑）
@@ -204,8 +204,7 @@ $isPartnerUser = $partnerId && isset($article['user_id']) && (int) $article['use
 $canEdit       = $isOwner || ($isPartnerUser && $allowPartnerEdit);
 
 if (!$canEdit) {
-    header('Location: articles.php?error=' . urlencode('你没有权限编辑这篇文章'));
-    exit;
+    redirect('articles.php?error=' . urlencode('你没有权限编辑这篇文章'));
 }
 
 // 读取当前文章的男主 / 女主贡献字数，用于在后台给参与共创的人一个提示
@@ -738,8 +737,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             }
         }
 
-        header('Location: article_edit.php?id=' . $id . '&success=1');
-        exit;
+        redirect('article_edit.php?id=' . $id . '&success=1');
     }
 
     // 有错误时更新 $article 用于回显

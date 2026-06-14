@@ -21,7 +21,17 @@ function url($path = '') {
  * 发送重定向并结束脚本
  */
 function redirect($url) {
-    header('Location: ' . $url);
+    if (!headers_sent()) {
+        header('Location: ' . $url);
+        exit;
+    }
+
+    $safeUrl = htmlspecialchars((string) $url, ENT_QUOTES, 'UTF-8');
+    $jsonUrl = json_encode((string) $url, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE);
+    echo '<!doctype html><html><head><meta charset="utf-8">';
+    echo '<meta http-equiv="refresh" content="0;url=' . $safeUrl . '">';
+    echo '<script>window.location.replace(' . $jsonUrl . ');</script>';
+    echo '</head><body><a href="' . $safeUrl . '">正在跳转，如果没有自动跳转请点击这里</a></body></html>';
     exit;
 }
 
