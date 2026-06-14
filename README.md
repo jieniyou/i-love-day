@@ -10,8 +10,7 @@
 本项目包含前台展示站点和后台管理系统,适合部署在个人服务器上供两人共同使用。
 
 **项目地址**:
-- GitHub: [https://github.com/MiTaosot/I_Love_Day](https://github.com/MiTaosot/I_Love_Day)
-- Gitee(国内镜像): [https://gitee.com/miTaolou/i_-love_-day](https://gitee.com/miTaolou/i_-love_-day)
+- GitHub: [https://github.com/jieniyou/i-love-day](https://github.com/jieniyou/i-love-day)
 
 ---
 
@@ -34,18 +33,6 @@
 - **说明**: 仅展示前台界面和功能,后台管理不对外开放
 
 > 💡 提示: 演示站展示了项目的实际运行效果,你可以浏览文章、相册、纪念日等功能。
-
----
-
-本项目由多种 AI 模型与人工协作开发,代码贡献度大致为:
-- GPT 5.1: 约 60%
-- Claude 4.5: 约 35%
-- Gemini 3 Pro: 约 2%
-- 人工手动调整与纠错(MiTao): 约 3%
-
-项目发起与维护者: **MiTao**
-
----
 
 ## 功能概览
 
@@ -381,8 +368,8 @@
     - 或网站关于页 / 页脚等明显位置。
   - 推荐保留的内容包括:
     - 原项目名称: `I Love Day 情侣成长记录小站`
-    - 原项目地址: `https://github.com/MiTaosot/I_Love_Day` (GitHub) / `https://gitee.com/miTaolou/i_-love_-day` (Gitee镜像)
-    - 作者: `MiTao`
+    - 原项目地址: `https://github.com/jieniyou/i-love-day` (GitHub)
+    - 作者: `ChrisLin`
     - 主要 AI 代码贡献者: `GPT 5.1(约 60%)`、`Claude 4.5(约 35%)`、`Gemini 3 Pro(约 2%)`
 
 - **修改版本说明**
