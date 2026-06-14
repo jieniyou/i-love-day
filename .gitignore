@@ -1,0 +1,30 @@
+# 配置文件(由安装向导自动生成)
+/config/database.php
+
+# 上传文件
+/uploads/*
+!/uploads/.gitkeep
+
+# 安装标记
+.installed
+enable_install.lock
+
+# 日志文件
+*.log
+
+# 系统文件
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# 临时文件
+*.tmp
+*.bak
+*.cache

@@ -1,0 +1,254 @@
+/**
+ * 登录/注册页面样式
+ */
+
+.auth-page {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 2rem 1rem;
+}
+
+.auth-container {
+    width: 100%;
+    max-width: 450px;
+}
+
+.auth-box {
+    width: 100%;
+}
+
+.auth-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.auth-header h1 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.auth-header p {
+    color: var(--text-light);
+    font-size: 1rem;
+}
+
+.auth-page .alert {
+    display: none;
+}
+
+.auth-form {
+    margin-bottom: 1.5rem;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.turnstile-group {
+    text-align: center;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.turnstile-group .cf-turnstile {
+    display: inline-block;
+    max-width: 100%;
+    transform-origin: center center;
+}
+
+/* 小屏幕下缩放 Turnstile 验证码 */
+@media (max-width: 340px) {
+    .turnstile-group .cf-turnstile {
+        transform: scale(0.9);
+    }
+}
+
+/* 确保 Turnstile iframe 不超出容器 */
+.turnstile-group .cf-turnstile iframe {
+    max-width: 100% !important;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--text-dark);
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 1px solid rgba(148, 163, 184, 0.45);
+    border-radius: 999px;
+    background: rgba(248, 250, 252, 0.96);
+    backdrop-filter: var(--blur);
+    -webkit-backdrop-filter: var(--blur);
+    font-size: 1rem;
+    color: var(--text-dark);
+    transition: all 0.25s ease;
+    box-shadow: 0 2px 8px rgba(15, 23, 42, 0.06);
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #8f9bff;
+    background: #ffffff;
+    box-shadow: 0 0 0 2px rgba(143, 155, 255, 0.25);
+}
+
+.form-group textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+.auth-divider {
+    text-align: center;
+    margin: 2rem 0;
+    position: relative;
+}
+
+.auth-divider::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.auth-divider span {
+    position: relative;
+    background: rgba(255, 255, 255, 0.25);
+    backdrop-filter: var(--blur);
+    -webkit-backdrop-filter: var(--blur);
+    padding: 0 1rem;
+    color: var(--text-light);
+}
+
+.auth-tabs {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.tab-btn {
+    flex: 1;
+    padding: 0.75rem;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: var(--blur);
+    -webkit-backdrop-filter: var(--blur);
+    color: var(--text-dark);
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.tab-btn:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.tab-btn.active {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border-color: transparent;
+}
+
+.auth-footer {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.back-link {
+    color: white;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.back-link:hover {
+    opacity: 0.8;
+    transform: translateX(-5px);
+}
+
+/* 注册角色选择：男女图标按钮 */
+.role-toggle {
+    display: flex;
+    gap: 0.75rem;
+    margin-top: 0.25rem;
+}
+
+.role-option {
+    flex: 1;
+    margin: 0;
+    cursor: pointer;
+}
+
+.role-option input[type="radio"] {
+    display: none;
+}
+
+.role-option-inner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    gap: 0.4rem;
+    padding: 0.6rem 0.4rem;
+    border-radius: 999px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    background: rgba(255, 255, 255, 0.25);
+    backdrop-filter: var(--blur);
+    -webkit-backdrop-filter: var(--blur);
+    font-size: 0.95rem;
+    color: var(--text-dark);
+    transition: all 0.25s ease;
+}
+
+.role-option-inner .role-text-main {
+    font-weight: 600;
+}
+
+.role-option-inner .role-text-sub {
+    font-size: 0.8rem;
+    color: var(--text-light);
+}
+
+.role-male-icon {
+    color: #3b82f6;
+}
+
+.role-female-icon {
+    color: #ec4899;
+}
+
+.role-option input[type="radio"]:checked + .role-option-inner {
+    border-color: transparent;
+    background: linear-gradient(135deg, #ff8ab5 0%, #8f9bff 100%);
+    color: #ffffff;
+    box-shadow: 0 8px 24px rgba(255, 138, 181, 0.35);
+}
+
+.role-option input[type="radio"]:checked + .role-option-inner .role-text-sub {
+    color: rgba(255, 255, 255, 0.9);
+}

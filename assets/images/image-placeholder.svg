@@ -1,0 +1,23 @@
+<svg width="400" height="300" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+  <!-- 纯色浅灰占位背景 -->
+  <rect x="0" y="0" width="400" height="300" rx="24" fill="#f3f4f6"/>
+  
+  <!-- 居中加载动画 (Vivid & Dynamic) -->
+  <g transform="translate(200, 150)">
+    <!-- 装饰性外圈 (淡色) -->
+    <circle cx="0" cy="0" r="80" fill="none" stroke="#e0e7ff" stroke-width="8" opacity="0.5" />
+    
+    <!-- 动态主圈 (鲜艳色 + 动态Dash) -->
+    <circle cx="0" cy="0" r="80" fill="none" stroke="#6366f1" stroke-width="8" stroke-linecap="round">
+      <animateTransform attributeName="transform" type="rotate" from="0 0 0" to="360 0 0" dur="1.5s" repeatCount="indefinite" />
+      <animate attributeName="stroke-dasharray" values="0 502; 360 502; 0 502" keyTimes="0; 0.5; 1" dur="1.5s" repeatCount="indefinite" />
+      <animate attributeName="stroke-dashoffset" values="0; -60; -490" keyTimes="0; 0.5; 1" dur="1.5s" repeatCount="indefinite" />
+    </circle>
+    
+    <!-- 中心呼吸点 -->
+    <circle cx="0" cy="0" r="16" fill="#6366f1">
+      <animate attributeName="r" values="16; 20; 16" dur="1.5s" repeatCount="indefinite" />
+      <animate attributeName="opacity" values="1; 0.6; 1" dur="1.5s" repeatCount="indefinite" />
+    </circle>
+  </g>
+</svg>

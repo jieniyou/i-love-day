@@ -1,0 +1,132 @@
+/**
+ * 文章详情页专用样式
+ * 把文章排版和可复用标题样式集中在这里，方便单独维护
+ */
+
+/**
+ * 自定义标题样式
+ * 可在后台代码模式中插入：
+ *   <h2 class="h-title">标题</h2>
+ *   <h3 class="h-title">小标题</h3>
+ *   <h4 class="h-title">小节标题</h4>
+ */
+body.page-article-detail .article-detail h1.h-title,
+body.page-article-detail .article-detail h2.h-title,
+body.page-article-detail .article-detail h3.h-title,
+body.page-article-detail .article-detail h4.h-title {
+    font-family: inherit;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    color: var(--text-dark);
+    margin: 1.6rem 0 0.75rem;
+    position: relative;
+    padding-left: 0.75rem;
+}
+
+/* 左侧渐变色条装饰 */
+body.page-article-detail .article-detail h1.h-title::before,
+body.page-article-detail .article-detail h2.h-title::before,
+body.page-article-detail .article-detail h3.h-title::before,
+body.page-article-detail .article-detail h4.h-title::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.2em;
+    bottom: 0.2em;
+    width: 3px;
+    border-radius: 999px;
+    background: linear-gradient(180deg, var(--primary-color), var(--accent-color));
+}
+
+/* 不同层级字号区分 */
+body.page-article-detail .article-detail h1.h-title {
+    font-size: 1.8rem;
+}
+
+body.page-article-detail .article-detail h2.h-title {
+    font-size: 1.6rem;
+}
+
+body.page-article-detail .article-detail h3.h-title {
+    font-size: 1.35rem;
+}
+
+body.page-article-detail .article-detail h4.h-title {
+    font-size: 1.15rem;
+}
+
+@media (max-width: 768px) {
+    body.page-article-detail .article-detail h1.h-title {
+        font-size: 1.6rem;
+    }
+
+    body.page-article-detail .article-detail h2.h-title {
+        font-size: 1.45rem;
+    }
+
+    body.page-article-detail .article-detail h3.h-title {
+        font-size: 1.25rem;
+    }
+
+    body.page-article-detail .article-detail h4.h-title {
+        font-size: 1.1rem;
+    }
+}
+
+/**
+ * 代码块基础样式（配合内联的深色背景，做一些细节增强）
+ * 后台代码模式可插入：
+ *   <pre><code>// 在这里粘贴代码</code></pre>
+ */
+body.page-article-detail .article-detail pre {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+body.page-article-detail .article-detail pre code {
+    font-family: inherit;
+}
+
+/* 行内代码略微突出 */
+body.page-article-detail .article-detail code {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
+/**
+ * 下载按钮样式
+ * 后台代码模式可插入：
+ * <p><a class="btn-download" href="#" target="_blank" rel="noopener">
+ *     <i class="fas fa-download"></i> 下载附件
+ * </a></p>
+ */
+body.page-article-detail .article-detail a.btn-download {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    padding: 0.55rem 1.15rem;
+    border-radius: 999px;
+    border: none;
+    background: linear-gradient(135deg, #ff8ab5 0%, #ff6cab 100%);
+    color: #ffffff;
+    font-size: 0.95rem;
+    font-weight: 500;
+    text-decoration: none;
+    box-shadow: 0 8px 20px rgba(255, 138, 181, 0.35);
+    transition: transform 0.15s ease, box-shadow 0.15s ease, filter 0.15s ease;
+}
+
+body.page-article-detail .article-detail a.btn-download i {
+    font-size: 0.95rem;
+}
+
+body.page-article-detail .article-detail a.btn-download:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 10px 26px rgba(255, 138, 181, 0.45);
+    filter: brightness(1.02);
+}
+
+body.page-article-detail .article-detail a.btn-download:active {
+    transform: translateY(0);
+    box-shadow: 0 4px 14px rgba(255, 138, 181, 0.4);
+}

@@ -1,0 +1,17 @@
+User-agent: *
+# 后台、系统核心、配置及数据库目录
+Disallow: /admin/
+Disallow: /core/
+Disallow: /config/
+Disallow: /database/
+
+# 接口与安装、登录等敏感页面
+Disallow: /api/
+Disallow: /install.php
+Disallow: /login.php
+Disallow: /logout.php
+
+# 上传目录（防止文件被当成内容页抓取）
+Disallow: /uploads/
+
+Sitemap: /sitemap.xml
